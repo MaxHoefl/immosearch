@@ -49,9 +49,9 @@ public class ImmosearchApplication {
 		}
 	}
 
-	@GetMapping
-	public ResponseEntity<String> getEcho(final String echo) {
-		return new ResponseEntity<>(echo, HttpStatus.OK);
+	@GetMapping("/test")
+	public ResponseEntity<String> test() {
+		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
 
 
