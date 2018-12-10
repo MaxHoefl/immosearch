@@ -49,7 +49,7 @@ public class ImmosearchApplication {
 		}
 	}
 
-	@GetMapping("/test")
+	@GetMapping("/")
 	public ResponseEntity<String> test() {
 		return new ResponseEntity<>("OK", HttpStatus.OK);
 	}
