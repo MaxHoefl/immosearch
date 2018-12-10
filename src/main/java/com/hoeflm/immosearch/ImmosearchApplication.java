@@ -29,21 +29,29 @@ import oauth.signpost.exception.OAuthCommunicationException;
 import oauth.signpost.exception.OAuthExpectationFailedException;
 
 import oauth.signpost.exception.OAuthMessageSignerException;
-
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @SpringBootApplication
+@RestController
 public class ImmosearchApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ImmosearchApplication.class, args);
 
 		try {
-			run(args);
+			//run(args);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	@GetMapping
+	public ResponseEntity<String> getEcho(final String echo) {
+		return new ResponseEntity<>(echo, HttpStatus.OK);
 	}
 
 
